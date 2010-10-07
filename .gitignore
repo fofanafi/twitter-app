@@ -1,7 +1,12 @@
 log/*
 tmp/*
+tmp/**/*
 .DS_Store
 doc/*
 config/database.yml
 config/consumer.yml
 db/schema.rb
+db/*.sqlite3
+*.swp
+*~
+
