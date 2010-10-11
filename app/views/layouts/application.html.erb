@@ -14,9 +14,8 @@
 <body>
 <div id="header">
   <div id="header_inner">
-    <h3><%= link_to "I'd Tweet That", root_url %></h3>
-    
     <%- if signed_in? -%>     
+			<h3><%= link_to username, root_url %></h3>
       <ul id="nav">
         <li class="<%= 'active' if request.request_uri == '/' %>">
           <%= link_to 'Home', root_url %></li>
@@ -29,6 +28,8 @@
         <li>
           <%= link_to 'Logout', session_url, :method => :delete %></li>
       </ul>
+		<%- else -%>
+			<h3><%= link_to "I'd Tweet That", root_url %></h3>
     <%- end -%>
   </div>
 </div>

@@ -2,14 +2,18 @@ module Twitter
   module AuthenticationHelpers
     def self.included(controller)
       controller.class_eval do
-        helper_method :signed_in?
-        hide_action :signed_in?
+        helper_method :signed_in?, :username
+        hide_action :signed_in?, :username
       end
     end
 
     def signed_in?
       !session[:screen_name].nil?
     end
+
+		def username
+			session[:screen_name]
+		end
 
     protected
       def authenticate
