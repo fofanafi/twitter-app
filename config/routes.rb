@@ -10,4 +10,5 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resource :session
   map.finalize_session 'session/finalize', :controller => 'sessions', :action => 'finalize'
+	map.connect 'session/rpx_token', :controller => 'sessions', :action => 'rpx_token'
 end

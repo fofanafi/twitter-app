@@ -13,6 +13,11 @@
 </head>
 <body>
 <div id="header">
+	<% if current_user %>
+		<%= current_user.email %>
+	<% else %>
+		<%=RPXNow.popup_code('Login', 'tweeter-app', url_for(:controller=>:sessions, :action=>:rpx_token, :only_path => false))%>
+	<% end %>
   <div id="header_inner">
     <%- if signed_in? -%>     
 			<h3><%= link_to username, root_url %></h3>
