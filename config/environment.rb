@@ -8,11 +8,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.gem 'twitter', :version => '0.9.12'
-# config.frameworks -= [:active_record, :active_resource]
+  config.frameworks -= [:active_record, :active_resource]
   config.time_zone = 'UTC'
-	config.gem "rpx_now"
-
-	config.after_initialize do # so rake gems:install works
-		RPXNow.api_key = "2cf28ea4484ba9e0f51dc02c6a81eb027031f733"
-	end
 end
